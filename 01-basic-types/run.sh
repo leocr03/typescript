@@ -1,4 +1,6 @@
 #!/bin/bash
 
-# Please run first: sudo chmod +x run.sh
+# Please run first: chmod +x run.sh
 
+tsc basicTypes.ts
+node basicTypes.js
