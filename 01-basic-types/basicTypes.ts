@@ -81,12 +81,20 @@ function showEnum() {
 function showAny() {
     showTitle('Any');
     let anything: any;
-    anything = [31, false, [ 4 ], 'hello!'];    
+    anything = [31, false, [ 4 ], 'hello!', function() {console.log('hey!');}];    
 
     console.log(anything);
-    // console.log(Color[1]);
-    // console.log(Color[6]);
-    // console.log(Color[2]);
+    console.log(anything[0]);
+    console.log(anything[1]);
+    console.log(anything[2]);
+    console.log(anything[3]);
+
+    anything[2].unshift(3);
+    console.log(anything[2]);
+
+    anything[2] = true;
+    console.log(anything[2]);
+    anything[4]();
 }
 
 showBoolean();
