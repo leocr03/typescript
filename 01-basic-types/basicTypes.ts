@@ -97,6 +97,26 @@ function showAny() {
     anything[4]();
 }
 
+function showVoid() {
+    showTitle('Void');
+    let x: void = null;
+    console.log(x);
+    x = undefined;
+    console.log(x);
+}
+
+function showNullUndefined() {
+    showTitle('Null / Undefined');
+    let x: null = null;
+    console.log('Null:' + x);
+    x = undefined;
+    console.log('Null:' + x);
+    let y: undefined = null;
+    console.log('Undefined:' + y);
+    y = undefined;
+    console.log('Undefined:' + y);
+}
+
 showBoolean();
 showNumber();
 showString();
@@ -104,3 +124,5 @@ showArray();
 showTuple();
 showEnum();
 showAny();
+showVoid();
+showNullUndefined();
