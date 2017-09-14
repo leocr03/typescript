@@ -117,6 +117,15 @@ function showNullUndefined() {
     console.log('Undefined:' + y);
 }
 
+function showTypeAssertions() {
+    showTitle('Type Assertions');
+    let x: any = '13';
+    let value1: number = <number> x;
+    console.log('With <>, is it true? [' + value1 + ']');
+    let value2: number = x as number;
+    console.log('With \'as\', is it true? [' + value2 + ']');
+}
+
 showBoolean();
 showNumber();
 showString();
@@ -126,3 +135,5 @@ showEnum();
 showAny();
 showVoid();
 showNullUndefined();
+showTypeAssertions();
+
