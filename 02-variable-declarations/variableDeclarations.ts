@@ -1,6 +1,8 @@
 import { Base } from "../base";
 
 function showVarScope() {
+    Base.showTitle('showVarScope');
+
     var a = 1;
 
     function sumVar(){
@@ -18,4 +20,26 @@ function showVarScope() {
     console.log('sumVar() = ' + sumVar());
 }
 
+function showVarScopeWithProblem(){
+    Base.showTitle('showVarScopeWithProblem');
+
+    for (var i = 0; i < 10; i++) {
+        setTimeout(function() { console.log(i); }, 100 * i);
+    }
+}
+
+function showVarScopeWithoutProblem(){
+    Base.showTitle('showVarScopeWithProblem');
+
+    for (var i = 0; i < 10; i++) {
+        // capture the current state of 'i'
+        // by invoking a function with its current value
+        (function(i) {
+            setTimeout(function() { console.log(i); }, 100 * i);
+        })(i);
+    }
+}
+
 showVarScope();
+showVarScopeWithProblem();
+showVarScopeWithoutProblem();
