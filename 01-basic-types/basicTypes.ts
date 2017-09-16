@@ -1,10 +1,8 @@
-function showTitle(title: string) {
-    console.log('\n\n=> ' + title + '\n');
-}
+import { Base } from "../base";
 
 function showBoolean() {
     let a: boolean;
-    showTitle('Boolean');
+    Base.showTitle('Boolean');
     console.log('Boolean with default value: ' + a);
     a = false;
     console.log('Boolean with false value: ' + a);
@@ -14,7 +12,7 @@ function showBoolean() {
 }
 
 function showNumber() {
-    showTitle('Number');
+    Base.showTitle('Number');
     let decimal: number = 6;
     let hex: number = 0xf00d;
     let binary: number = 0b1010;
@@ -27,7 +25,7 @@ function showNumber() {
 }
 
 function showString() {
-    showTitle('String');
+    Base.showTitle('String');
     let fullName: string = `Bob Bobbington`;
     let age: number = 37;
     let sentence: string = `
@@ -41,7 +39,7 @@ function showString() {
 
 
 function showArray() {
-    showTitle('Array');
+    Base.showTitle('Array');
     let list: number[] = [1, 2, 3];
     let greetings: Array<String> = ['Hello', 'Hi'];
 
@@ -50,7 +48,7 @@ function showArray() {
 }
 
 function showTuple() {
-    showTitle('Tuple');
+    Base.showTitle('Tuple');
     let x: [string, number];
     x = ['hello', 10];
     let y: [string, [string, number]];
@@ -69,7 +67,7 @@ function showTuple() {
 }
 
 function showEnum() {
-    showTitle('Enum');
+    Base.showTitle('Enum');
     enum Color {Red = 2, Green, Blue = 6}
     let c: string = Color[3];
     console.log(c);
@@ -79,7 +77,7 @@ function showEnum() {
 }
 
 function showAny() {
-    showTitle('Any');
+    Base.showTitle('Any');
     let anything: any;
     anything = [31, false, [ 4 ], 'hello!', function() {console.log('hey!');}];    
 
@@ -98,7 +96,7 @@ function showAny() {
 }
 
 function showVoid() {
-    showTitle('Void');
+    Base.showTitle('Void');
     let x: void = null;
     console.log(x);
     x = undefined;
@@ -106,7 +104,7 @@ function showVoid() {
 }
 
 function showNullUndefined() {
-    showTitle('Null / Undefined');
+    Base.showTitle('Null / Undefined');
     let x: null = null;
     console.log('Null:' + x);
     x = undefined;
@@ -118,7 +116,7 @@ function showNullUndefined() {
 }
 
 function showTypeAssertions() {
-    showTitle('Type Assertions');
+    Base.showTitle('Type Assertions');
     let x: any = '13';
     let value1: number = <number> x;
     console.log('With <>, is it true? [' + value1 + ']');
