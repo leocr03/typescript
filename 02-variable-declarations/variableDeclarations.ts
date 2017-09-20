@@ -20,26 +20,83 @@ function showVarScope() {
     console.log('sumVar() = ' + sumVar());
 }
 
-function showVarScopeWithProblem(){
-    Base.showTitle('showVarScopeWithProblem');
-
-    for (var i = 0; i < 10; i++) {
-        setTimeout(function() { console.log(i); }, 100 * i);
-    }
+function showVarDeclaration() {
+    Base.showTitle('showVarDeclaration');
 }
 
-function showVarScopeWithoutProblem(){
-    Base.showTitle('showVarScopeWithProblem');
-
-    for (var i = 0; i < 10; i++) {
-        // capture the current state of 'i'
-        // by invoking a function with its current value
-        (function(i) {
-            setTimeout(function() { console.log(i); }, 100 * i);
-        })(i);
-    }
+function showScopingRules() {
+    Base.showTitle('showScopingRules');
 }
+
+function showVariableQuirks() {
+    Base.showTitle('showVariableQuirks');
+}
+
+function showLet() {
+    Base.showTitle('showLet');
+}
+
+function showBlockScoping() {
+    Base.showTitle('showBlockScoping');
+}
+
+function showRedeclarationAndShadowing() {
+    Base.showTitle('showRedeclarationAndShadowing');
+}
+
+function showBlockScopedVariableCapturing() {
+    Base.showTitle('showBlockScopedVariableCapturing');
+}
+
+function showConstDeclaration() {
+    Base.showTitle('showConstDeclaration');
+}
+
+function showLetVsConst() {
+    Base.showTitle('showLetVsConst');
+}
+
+function showDestructuring() {
+    Base.showTitle('showDestructuring');
+}
+
+function showObjectDestructuring() {
+    Base.showTitle('showObjectDestructuring');
+}
+
+function showPropertyRenaming() {
+    Base.showTitle('showPropertyRenaming');
+}
+
+function showDefaultVariables() {
+    Base.showTitle('showDefaultVariables');
+}
+
+function showFunctionsDeclaration() {
+    Base.showTitle('showFunctionsDeclaration');
+}
+
+function showSpread() {
+    Base.showTitle('showSpread');
+}
+
+
+
+
 
 showVarScope();
-showVarScopeWithProblem();
-showVarScopeWithoutProblem();
+showVarDeclaration();
+showScopingRules();
+showVariableQuirks();
+showLet();
+showBlockScoping();
+showRedeclarationAndShadowing();
+showBlockScopedVariableCapturing();
+showConstDeclaration();
+showLetVsConst();
+showDestructuring();
+showObjectDestructuring();
+showPropertyRenaming();
+showDefaultVariables();
+showFunctionsDeclaration();
+showSpread();
