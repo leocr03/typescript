@@ -22,46 +22,78 @@ function showVarScope() {
 
 function showVarDeclaration() {
     Base.showTitle('showVarDeclaration');
+    var someVar: String = 'Hello var!';
+    console.log(someVar);
 }
 
 function showScopingRules() {
     Base.showTitle('showScopingRules');
-}
 
-function showVariableQuirks() {
-    Base.showTitle('showVariableQuirks');
+    var i = 1;
+    
+    if (i < 3) {
+        var someVar: String = 'Hello var inside if!';
+    }
+
+    console.log(someVar);
 }
 
 function showLet() {
     Base.showTitle('showLet');
-}
 
-function showBlockScoping() {
-    Base.showTitle('showBlockScoping');
-}
-
-function showRedeclarationAndShadowing() {
-    Base.showTitle('showRedeclarationAndShadowing');
-}
-
-function showBlockScopedVariableCapturing() {
-    Base.showTitle('showBlockScopedVariableCapturing');
+    var someLet: String = 'Hello let!';
+    console.log(someLet);
 }
 
 function showConstDeclaration() {
     Base.showTitle('showConstDeclaration');
-}
 
-function showLetVsConst() {
-    Base.showTitle('showLetVsConst');
+    const person = {
+        name: 'Leonardo',
+        age: 18
+    };
+
+    console.log('A const with value = ' + JSON.stringify(person));
+
+    person.age = 35;
+
+    console.log('A const with value = ' + JSON.stringify(person));
 }
 
 function showDestructuring() {
     Base.showTitle('showDestructuring');
+
+    let ages = [41,55, 53, 17, 87];
+    let [first, ...second] = ages;
+
+    console.log('first: ' + first);
+    console.log('second: ' + second);
 }
 
 function showObjectDestructuring() {
     Base.showTitle('showObjectDestructuring');
+
+    let person = {
+        name: 'Leonardo',
+        age: 18
+    };
+
+    let { age, name } = person;
+
+    console.log('name: ' + name);
+    console.log('age: ' + age);
+
+    let personFullName = {
+        firstname: 'Leonardo',
+        lastname: 'Cristofari',
+        age: 35
+    };
+
+    let { firstname, ...others } = personFullName;
+
+    console.log('firstname: ' + firstname);
+    console.log('others.age: ' + others.age);
+    console.log('others.lastname: ' + others.lastname);
 }
 
 function showPropertyRenaming() {
@@ -81,19 +113,11 @@ function showSpread() {
 }
 
 
-
-
-
 showVarScope();
 showVarDeclaration();
 showScopingRules();
-showVariableQuirks();
 showLet();
-showBlockScoping();
-showRedeclarationAndShadowing();
-showBlockScopedVariableCapturing();
 showConstDeclaration();
-showLetVsConst();
 showDestructuring();
 showObjectDestructuring();
 showPropertyRenaming();
