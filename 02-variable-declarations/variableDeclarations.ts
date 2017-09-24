@@ -96,20 +96,68 @@ function showObjectDestructuring() {
     console.log('others.lastname: ' + others.lastname);
 }
 
-function showPropertyRenaming() {
-    Base.showTitle('showPropertyRenaming');
+function showDestructuringPropertyRenaming() {
+    Base.showTitle('showDestructuringPropertyRenaming');
+
+    let person = {
+        name: 'Leonardo',
+        age: 18
+    };
+
+    let { name: myname, age: myage } = person;
+
+    console.log('myName: ' + myname);
+    console.log('myAge: ' + myage);
 }
 
-function showDefaultVariables() {
-    Base.showTitle('showDefaultVariables');
+function showDestructuringDefaultVariables() {
+    Base.showTitle('showDestructuringDefaultVariables');
+
+    let person = {
+        name: 'Leonardo',
+        age: 18
+    };
+
+    let { name: myname, age: myage = 34 } = person;
+
+    console.log('myName: ' + myname);
+    console.log('myAge: ' + myage);
+
+    let person2 = {
+        name: 'Leonardo',
+        age: undefined
+    };
+
+    let { name: myname2, age: myage2 = 34 } = person2;
+    console.log('Using default:');
+    console.log('myName2: ' + myname2);
+    console.log('myAge2: ' + myage2);
 }
 
-function showFunctionsDeclaration() {
-    Base.showTitle('showFunctionsDeclaration');
+function showDestructuringFunctionsDeclaration() {
+    Base.showTitle('showDestructuringFunctionsDeclaration');
+
+    function sum ({x: number1, y: number2}: {x: number, y: number}) {
+        return number1 + number2;
+    }
+
+    console.log('sum({ x: 2, y: 5 })) = ' + sum({ x: 2, y: 5 }));
 }
 
 function showSpread() {
     Base.showTitle('showSpread');
+
+    let first = [3, 4, 5, 6, 7];
+    let second = [8, 9, 10, 11];
+    let allNUmber = [1, 2, ...first, ...second, 12];
+
+    console.log(allNUmber);
+
+    let hand = { fingers: 5 };
+    let arm = { elbow: 1, ...hand};
+    let leg = { feet: 2 };
+    let body = { ...arm, ...leg };
+    console.log(body);
 }
 
 
@@ -120,7 +168,7 @@ showLet();
 showConstDeclaration();
 showDestructuring();
 showObjectDestructuring();
-showPropertyRenaming();
-showDefaultVariables();
-showFunctionsDeclaration();
+showDestructuringPropertyRenaming();
+showDestructuringDefaultVariables();
+showDestructuringFunctionsDeclaration();
 showSpread();
