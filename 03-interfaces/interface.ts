@@ -75,7 +75,7 @@ import { Base } from "../base";
 
 
 (function showExcessPropertyChecks() {
-    Base.showTitle('showReadOnlyProperties');
+    Base.showTitle('showExcessPropertyChecks');
 
     interface Person {
         name: String,
