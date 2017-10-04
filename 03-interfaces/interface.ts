@@ -91,3 +91,24 @@ import { Base } from "../base";
 
     printPerson(person);
 })();
+
+
+(function showFunctionType() {
+    Base.showTitle('showFunctionType');
+
+    interface SomeFuncType {
+        (...numbers) : number
+    }
+
+    let sum: SomeFuncType = (...number) {
+        let total = 0;
+
+        number.forEach(function(element){
+            total += element;
+        });
+
+        return total;
+    }
+
+    console.log("The sum result of function type is: " + sum(1,3,4,5));
+})();
