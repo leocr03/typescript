@@ -73,7 +73,6 @@ import { Base } from "../base";
     // people[0] = person;
 })();
 
-
 (function showExcessPropertyChecks() {
     Base.showTitle('showExcessPropertyChecks');
 
@@ -92,7 +91,6 @@ import { Base } from "../base";
     printPerson(person);
 })();
 
-
 (function showFunctionType() {
     Base.showTitle('showFunctionType');
 
@@ -100,7 +98,7 @@ import { Base } from "../base";
         (...numbers) : number
     }
 
-    let sum: SomeFuncType = (...number) {
+    let sum: SomeFuncType = (...number) => {
         let total = 0;
 
         number.forEach(function(element){
@@ -111,4 +109,65 @@ import { Base } from "../base";
     }
 
     console.log("The sum result of function type is: " + sum(1,3,4,5));
+})();
+
+(function showIndexableType() {
+    Base.showTitle('showIndexableType');
+
+    interface SomeIndex {
+        [index: number] : string;
+    }
+
+    let someArray: SomeIndex = ["hey", "hi", "uou"];
+
+    console.log("Accessing by Number Index (someArray[1]): " + someArray[1]);
+    console.log("Accessing by Number Index (someArray[\"hey\"]): " + someArray["hey"]);
+
+
+    interface SomeNumberIndex {
+        [index: number] : number;
+    }
+
+    let someOtherArray: SomeNumberIndex = [3, 5, 6];
+
+    console.log("Accessing by Number Index (someArray[1]): " + someOtherArray[1]);
+    console.log("Accessing by Number Index (someArray[\"hey\"]): " + someOtherArray["hey"]);
+
+    
+    interface SomeStringIndex {
+        [index: string] : number;
+    }
+
+    let someStringIndexStringArray: SomeStringIndex = {};
+    someStringIndexStringArray["hey"] = 1;
+    someStringIndexStringArray["hi"] = 3;
+    someStringIndexStringArray["uou"] = 5;
+    
+    console.log("Accessing by String Index (someArray[1]): " + someStringIndexStringArray[1]);
+    console.log("Accessing by String Index (someArray[\"hey\"]): " + someStringIndexStringArray["hey"]);
+    console.log("Accessing by String Index (someArray[\"hi\"]): " + someStringIndexStringArray["hi"]);
+    console.log("Accessing by String Index (someArray[\"uou\"]): " + someStringIndexStringArray["uou"]);
+})();
+
+(function showClassType() {
+    Base.showTitle('showClassType');
+
+    interface Person {
+        name: string;
+        age: number;
+        updateAge();
+    }
+
+    class Leonardo implements Person {
+        name: string = "Leonardo";
+        age: number;
+        updateAge() {
+            this.age = 35;
+        }
+    }
+
+    let leo: Leonardo = new Leonardo();
+    console.log(leo);
+    let age = leo.updateAge();
+    console.log(leo);
 })();
