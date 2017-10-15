@@ -166,8 +166,45 @@ import { Base } from "../base";
         }
     }
 
-    let leo: Leonardo = new Leonardo();
+    let leo: Person = new Leonardo();
     console.log(leo);
     let age = leo.updateAge();
     console.log(leo);
+})();
+
+
+(function showImplementingInterfaceWithConstructor() {
+    Base.showTitle('showImplementingInterfaceWithConstructor');
+
+    interface Animal {
+        lifes: number,
+        name: string,
+        talk();
+    }
+
+    interface AnimalConstructor {
+        new (lifes: number, name: string): Animal;
+    }
+
+    function createAnimal(ctor: AnimalConstructor, lifes: number, name: string) {
+        return new ctor(lifes, name);
+    }
+
+    class Dog implements Animal {
+        lifes: number = 1;
+        name: string = "Dog";
+
+        constructor(lifes: number, name: string) {
+            this.lifes = lifes;
+            this.name = name;
+        }
+
+        talk() {
+            console.log("Au au!");
+        }
+    }
+
+    let animal: Animal = createAnimal(Dog, 1, 'Dolly');
+
+    console.log('The animal with name [%s] with [%s]', animal.name, animal.lifes)
 })();
