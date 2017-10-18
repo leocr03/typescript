@@ -208,3 +208,23 @@ import { Base } from "../base";
 
     console.log('The animal with name [%s] with [%s]', animal.name, animal.lifes)
 })();
+
+(function showImplementingInheritance() {
+    Base.showTitle('showImplementingInheritance');
+
+    interface Animal {
+        age: number
+        gener: string
+    }
+
+    interface Person extends Animal {
+        name: string
+    }
+
+    let me = <Person>{}
+    me.age = 35
+    me.name = 'Leonardo'
+    me.gener = 'male'
+
+    console.log('It\'s me: ' + JSON.stringify(me))
+})();
