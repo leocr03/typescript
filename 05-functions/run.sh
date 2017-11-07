@@ -2,6 +2,5 @@
 
 # Please run first: chmod +x run.sh
 
-tsc ../base.ts
-tsc index.ts
-node index.js
+tsc functions.ts
+node functions.js
